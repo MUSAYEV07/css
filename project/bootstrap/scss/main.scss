@@ -1,0 +1,361 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-block: 0;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .text {
+    text-align: center;
+  } 
+  
+  .make-section-div {
+    text-align: center;
+  }
+  
+}
+
+.features-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature {
+  display: flex;
+  gap: 15px;
+}
+
+$primary-color: #7065f0;
+$bg-gradient-top: #f7f7fd; 
+$bg-gradient-bottom: #ffffff;
+
+.hero-section {
+  background: linear-gradient(180deg, $bg-gradient-top 0%, $bg-gradient-bottom 100%);
+  min-height: 100vh;
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  
+  .hero-content-wrapper {
+    padding-left: 10%; 
+    padding-right: 50px;
+    z-index: 10;
+  }
+  
+ 
+  .search-container {
+    position: relative;
+    z-index: 20;
+    
+    .btn-tab {
+      background: transparent;
+      border: none;
+      color: $primary-color;
+      font-weight: 600;
+      padding: 10px 25px;
+      &.active {
+        background: white;
+        border-radius: 8px 8px 0 0;
+      }
+    }
+    
+    .search-box {
+      background: white;
+      padding: 20px;
+      border-radius: 0 12px 12px 12px;
+      width: 110%; 
+      max-width: 700px;
+      
+      .search-item {
+        flex: 1;
+        padding: 0 20px;
+        h6 { margin: 0; font-weight: 700; }
+        small { color: #888; }
+      }
+      
+      .browse-btn {
+        background-color: $primary-color;
+        padding: 15px 30px;
+        border-radius: 10px;
+        white-space: nowrap;
+      }
+    }
+  }
+  
+  // O'ng ustun rasmi
+  .hero-image-col {
+    .image-holder {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      
+      .main-house-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Rasm ustunni to'liq yopishi uchun
+        border-radius: 20px 0 0 20px; // Chap tomonini sal aylana qilish
+      }
+    }
+    
+    .testimonial-card {
+      position: absolute;
+      top: 15%;
+      left: -50px; // Rasmning chapiga biroz chiqib turadi
+      width: 280px;
+      z-index: 25;
+    }
+  }
+  
+  .stat-card {
+    h5 { color: $primary-color; margin-top: 15px; }
+    p { font-size: 14px; color: #666; }
+  }
+}
+
+// Mobile uchun moslashuv
+@media (max-width: 992px) {
+  .hero-section {
+    .search-box { width: 100% !important; }
+    .hero-content-wrapper { padding: 50px 20px; }
+    .hero-image-col { height: 400px; }
+  }
+}
+
+@media (min-width: 992px) {
+  
+  .features-wrapper {
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  .new-home {
+    width: 35%;
+  }
+  
+  .features-right {
+    width: 65%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+}
+$dark-bg: #1e1b4b;
+$purple: #6d5dfc;
+$light-bg: #ffffff;
+$text-light: #c7c9ff;
+
+.features1 {
+  background: $dark-bg; 
+  padding: 80px 0;
+  color: white;
+  
+  .container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    margin-bottom: 60px;
+    
+    @media (max-width: 768px) {
+      flex-direction: column; 
+      gap: 20px;
+    }
+  }
+  
+  &__title {
+    flex: 1;
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 700;
+    
+    span {
+      color: $purple;
+    }
+  }
+  
+  &__desc {
+    flex: 1;
+    font-size: 16px;
+    color: $text-light;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  
+  // Kartalar setkasi
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .card {
+    text-decoration: none; // Link chizig'ini olib tashlaydi
+    padding: 40px 30px;
+    border-radius: 12px;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    
+    .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%; // Figmada doira shaklida
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      
+      img {
+        width: 30px;
+      }
+    }
+    
+    h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+    
+    &:hover {
+      transform: translateY(-10px);
+    }
+    
+    // Ranglar 
+    &.dark {
+      background: rgba(255, 255, 255, 0.07);
+      color: white;
+      .icon { background: rgba(255, 255, 255, 0.1); }
+    }
+    
+    &.light {
+      background: $light-bg;
+      color: $dark-bg;
+      .icon { background: #f2f2ff; }
+    }
+    
+    &.purple {
+      background: $purple;
+      color: white;
+      .icon { background: rgba(255, 255, 255, 0.2); }
+    }
+  }
+}
+
+
+// bhvdvdndnjvdvndvdnjdndnj
+
+.enter {
+  padding: 50px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.no-spam {
+  color: #7065F0;
+  font-weight: bold;
+}
+
+.main-title {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin: 15px 0;
+}
+
+.description {
+  color: #6c6c6c;
+  font-size: 1rem;
+}
+
+.email-form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.email-form input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 250px;
+  font-size: 1rem;
+}
+
+.email-form button {
+  background-color: #7065F0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.join-text {
+  font-size: 0.9rem;
+  color: #6c6c6c;
+}
+
+.highlight {
+  color: #7065F0;
+  font-weight: bold;
+}
+
+
+.footer {
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+  
+  h6 {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+  
+  a {
+    transition: 0.2s;
+    &:hover {
+      color: #7065f0 !important;
+    }
+  }
+  
+  .social-links i {
+    font-size: 18px;
+  }
+}
