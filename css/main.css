@@ -115,6 +115,13 @@ ul {
 .hero-section .search-container .search-box .search-item small {
   color: #888;
 }
+.hero-section .stats-wrapper {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero-section .stats-wrapper .stat-card {
+  min-width: 180px;
+}
 .hero-section .search-container .search-box .browse-btn {
   background-color: #7065f0;
   padding: 15px 30px;
